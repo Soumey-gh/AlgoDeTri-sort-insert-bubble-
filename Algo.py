@@ -40,17 +40,35 @@ print(algoSort(list))
 # -----------------------------------------------#
 
 # Bubble sort
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+# def bubble_sort(arr):
+# n = len(arr)
+# for i in range(n):
+# for j in range(0, n - i - 1):
+# if arr[j] > arr[j + 1]:
+# arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
 
 # Ex
-arr = [64, 34, 25, 12, 22, 11, 90]
-bubble_sort(arr)
-print("Le résultat ", arr)
+# arr = [64, 34, 25, 12, 22, 11, 90]
+# bubble_sort(arr)
+# print("Le résultat ", arr)
+
 
 # -----------------------------------------------#
+
+def bubbleSort(tableau):
+    inversion = True
+    passage = 0
+    while inversion == True:
+        inversion = False
+        passage = passage + 1
+        for i in range(0, len(tableau) - passage):
+            if tableau[i] > tableau[i + 1]:
+                inversion = True
+                tableau[i], tableau[i + 1] = tableau[i + 1], tableau[i]
+    return tableau
+
+
+# Ex
+tableau = [64, 34, 25, 12, 22, 11]
+print(bubbleSort(tableau))
